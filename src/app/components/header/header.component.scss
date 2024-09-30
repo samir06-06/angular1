@@ -1,0 +1,28 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+.mat-toolbar {
+  color: white;
+  background: #154f59;
+}
+.header-menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  li {
+    a {
+      color: #fff;
+      padding: 0 10px;
+      text-decoration: none;
+      font-size: 16px;
+      opacity: 0.7;
+      &:hover {
+        opacity: 1;
+      }
+    }
+    .active {
+      opacity: 1;
+    }
+  }
+}

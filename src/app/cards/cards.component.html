@@ -1,0 +1,26 @@
+<main>
+  <div class="d-flex align-items-center">
+    <div class="flex-grow-1">
+      <h1 class="page-title">KartVisitler</h1>
+      <p class="page-description">
+        kartvisit app ile kartlarinizi yaninizda tasimak zorunda degilsiniz
+      </p>
+    </div>
+    <app-card-search></app-card-search>
+    <button mat-flat-button (click)="openDialog()" style="margin-left: 10px">
+      Yeni KartVisit
+    </button>
+  </div>
+
+  <hr />
+  <div class="cards">
+    <div class="row">
+      <div
+        class="col-12 col-md-4 col-lg-3"
+        *ngFor="let card of cardService.filteredCards"
+      >
+        <app-card [cardItem]="card"></app-card>
+      </div>
+    </div>
+  </div>
+</main>

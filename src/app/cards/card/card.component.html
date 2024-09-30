@@ -1,0 +1,28 @@
+<mat-card class="card-item" appearance="outlined">
+  <mat-card-header (click)="openUpdateCardModal()">
+    <mat-card-title>{{ cardItem.name || "--" }}</mat-card-title>
+    <mat-card-subtitle>{{ cardItem.title }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <ul class="list-group">
+      <li class="list-group-item">{{ cardItem.phone }}</li>
+      <li class="list-group-item">
+        <span *ngIf="cardItem.email">
+          {{ cardItem.email }}
+        </span>
+        <small class="text-warning no-content" *ngIf="!cardItem.email"
+          >Email has not been added</small
+        >
+      </li>
+
+      <li class="list-group-item">
+        <span *ngIf="cardItem.address">
+          {{ cardItem.address }}
+        </span>
+        <small class="text-warning no-content" *ngIf="!cardItem.address"
+          >Address has not been added</small
+        >
+      </li>
+    </ul>
+  </mat-card-content>
+</mat-card>

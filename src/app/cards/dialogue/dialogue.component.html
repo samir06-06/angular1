@@ -1,0 +1,52 @@
+<h2 mat-dialog-title>{{ data ? "KartVisiti Duzenle" : "Yeni KartVisit" }}</h2>
+<mat-dialog-content class="mat-typography">
+  <div>
+    <mat-progress-bar *ngIf="showBar" mode="indeterminate"></mat-progress-bar>
+    <br />
+  </div>
+  <form action="" [formGroup]="cardForm">
+    <mat-form-field class="example-form-field">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" />
+    </mat-form-field>
+    <mat-form-field class="example-form-field">
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title" />
+    </mat-form-field>
+    <mat-form-field class="example-form-field">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" />
+    </mat-form-field>
+    <mat-form-field class="example-form-field">
+      <mat-label>Phone</mat-label>
+      <input matInput formControlName="phone" />
+    </mat-form-field>
+    <mat-form-field class="example-form-field">
+      <mat-label>Adress</mat-label>
+      <textarea matInput formControlName="address"></textarea>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <div *ngIf="data" class="text-start flex-grow-1">
+    <button
+      mat-flat-button
+      color="warn"
+      [disabled]="showBar"
+      (click)="deleteCard()"
+    >
+      Sil
+    </button>
+  </div>
+  <div>
+    <button mat-button>Iptal</button>
+    <button
+      [disabled]="cardForm.invalid || showBar"
+      color="primary"
+      mat-flat-button
+      (click)="data ? updateCard() : addCard()"
+    >
+      {{ data ? "Duzenle" : "Ekle" }}
+    </button>
+  </div>
+</mat-dialog-actions>

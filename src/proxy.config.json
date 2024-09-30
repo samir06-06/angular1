@@ -1,0 +1,8 @@
+{
+  "/api": {
+    "target": "http://demo.limantech.com",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}
